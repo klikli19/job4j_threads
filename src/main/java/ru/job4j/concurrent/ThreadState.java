@@ -17,7 +17,6 @@ public class ThreadState {
             System.out.println(second.getState());
         }
 
-
         System.out.println("Работа завершена");
     }
 }
