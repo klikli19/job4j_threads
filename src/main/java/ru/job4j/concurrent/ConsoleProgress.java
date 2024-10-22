@@ -6,20 +6,22 @@ public class ConsoleProgress implements Runnable {
         progress.start();
         Thread.sleep(5000);
         progress.interrupt();
+        progress.join();
     }
 
     @Override
     public void run() {
-        var process = new char[]{'-', '\\', '|', '/' };
-
+        var process = new char[] {'-', '\\', '|', '/' };
+        int i = 0;
         while (!Thread.currentThread().isInterrupted()) {
+            System.out.print("\r load: " + process[i++]);
             try {
-                for (char i : process) {
-                    System.out.println("\rLoad: " + i);
-                    Thread.sleep(500);
-                }
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+            }
+            if (i == process.length) {
+                i = 0;
             }
         }
     }
