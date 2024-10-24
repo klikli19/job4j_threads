@@ -38,6 +38,7 @@ public class Wget implements Runnable {
         wget.start();
         wget.join();
     }
+
     private static void validateArgs(int argsNum) {
         if (argsNum != 2) {
             throw new IllegalArgumentException("Вы должны предоставить 2 аргумента (имя файла и ограничение скорости)");
