@@ -38,7 +38,7 @@ public class Wget implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        validateArgs(args);
+        validateArgs(args.length);
         String url = args[0];
         int speed = Integer.parseInt(args[1]);
         String fileName = args[2];
@@ -47,18 +47,9 @@ public class Wget implements Runnable {
         wget.join();
     }
 
-    private static void validateArgs(String[] args) {
-        if (args.length < 3) {
+    private static void validateArgs(int args) {
+        if (args != 3) {
             throw new IllegalArgumentException("Недостаточно параметров");
-        }
-        if (args[0].isBlank()) {
-            throw new IllegalArgumentException("Некорректный 1 параметр");
-        }
-        if (args[1].isBlank() || Integer.parseInt(args[1]) == 0) {
-            throw new IllegalArgumentException("Некорректный 2 параметр");
-        }
-        if (args[2].isBlank()) {
-            throw new IllegalArgumentException("Некорректный 3 параметр");
         }
     }
 }
