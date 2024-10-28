@@ -28,7 +28,7 @@ public class Wget implements Runnable {
                     long downloadAt = System.currentTimeMillis();
                     long downloadTime = start - downloadAt;
                     if (downloadTime < 1000) {
-                        Thread.sleep(downloadedBytes/speed * 1000 - downloadTime);
+                        Thread.sleep(downloadedBytes / speed * 1000 - downloadTime);
                     }
                 }
             }
