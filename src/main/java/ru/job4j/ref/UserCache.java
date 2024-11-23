@@ -18,6 +18,10 @@ public class UserCache {
     }
 
     public List<User> findAll() {
-        return new ArrayList<>(users.values());
+         List<User> list = new ArrayList<>();
+         for (int a : users.keySet()) {
+             list.add(User.of(users.get(a).getName()));
+         }
+         return list;
     }
 }
