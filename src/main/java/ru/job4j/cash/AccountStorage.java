@@ -24,7 +24,7 @@ public class AccountStorage {
     }
 
     public synchronized Optional<Account> getById(int id) {
-        return accounts.get(id) == null ? Optional.empty() : Optional.of(accounts.get(id));
+        return Optional.ofNullable(accounts.get(id));
     }
 
     public synchronized boolean transfer(int fromId, int toId, int amount) {
