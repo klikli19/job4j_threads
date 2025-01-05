@@ -34,7 +34,6 @@ public class ThreadPool {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-
     }
     public void shutdown() {
         threads.stream().iterator().forEachRemaining(Thread::interrupt);
