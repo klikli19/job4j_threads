@@ -27,12 +27,14 @@ public class ThreadPool {
             threads.add(thread);
         }
     }
+
     public void work(Runnable job) throws InterruptedException {
         try {
             tasks.offer(job);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+
     }
     public void shutdown() {
         threads.stream().iterator().forEachRemaining(Thread::interrupt);
@@ -48,6 +50,7 @@ public class ThreadPool {
                 throw new RuntimeException(e);
             }
         });
+
         pool.shutdown();
     }
 }
