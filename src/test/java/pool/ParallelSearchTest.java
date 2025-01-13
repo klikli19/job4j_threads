@@ -56,7 +56,6 @@ public class ParallelSearchTest {
         assertEquals(2, ParallelSearch.sort(3, array));
     }
 
-
     @Test
     void testStringArray() {
         String[] array = {"bmw", "audi", "volvo"};
