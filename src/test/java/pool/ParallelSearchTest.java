@@ -6,12 +6,6 @@ import ru.job4j.pool.ParallelSearch;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ParallelSearchTest {
-//    @Test
-//    void testEmptyArray() {
-//        Integer[] array = {};
-//        assertEquals(-1, ParallelSearch.<Integer>sort(1, array));
-//    } не проходит никак тест
-
     @Test
     void testNullValue() {
         Integer[] array = {1, 2, 3};
