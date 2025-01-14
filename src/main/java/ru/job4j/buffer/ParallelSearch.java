@@ -7,7 +7,6 @@ public class ParallelSearch {
 
     public static void main(String[] args) throws InterruptedException {
         AtomicBoolean flag = new AtomicBoolean(Boolean.TRUE);
-
         SimpleBlockingQueue<Integer> queue = new SimpleBlockingQueue<Integer>(1);
         final Thread consumer = new Thread(
         () -> {
@@ -19,8 +18,7 @@ public class ParallelSearch {
             }
         }
         System.out.println("consumer end");
-        Thread.currentThread().interrupt();
-    }
+        Thread.currentThread().interrupt();}
         );
     final Thread producer = new Thread(
             () -> {
