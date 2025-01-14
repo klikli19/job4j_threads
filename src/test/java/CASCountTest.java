@@ -38,7 +38,7 @@ public class CASCountTest {
     }
 
     @Test
-    void testGetReturnsCorrectValue(){
+    void testGetReturnsCorrectValue() {
         CASCount counter = new CASCount();
         counter.increment();
         assertEquals(1, counter.get());
@@ -48,13 +48,13 @@ public class CASCountTest {
     }
 
     @Test
-    void testInitialValue(){
+    void testInitialValue() {
         CASCount counter = new CASCount();
         assertEquals(0, counter.get());
     }
 
     @Test
-    void testConsecutiveIncrements(){
+    void testConsecutiveIncrements() {
         CASCount counter = new CASCount();
         counter.increment();
         counter.increment();
