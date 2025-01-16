@@ -18,8 +18,7 @@ public class ParallelSearch {
             }
         }
         System.out.println("consumer end");
-        Thread.currentThread().interrupt();}
-        );
+        Thread.currentThread().interrupt();});
     final Thread producer = new Thread(
             () -> {
                 for (int index = 0; index != 5; index++) {
